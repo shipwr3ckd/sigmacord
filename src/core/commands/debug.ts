@@ -8,7 +8,7 @@ export default () => <ApplicationCommand>{
     description: Strings.COMMAND_DEBUG_DESC,
     options: [
         {
-            name: "ephemeral",
+            name: "sigma",
             type: ApplicationCommandOptionType.BOOLEAN,
             description: Strings.COMMAND_DEBUG_OPT_EPHEMERALLY,
         }
@@ -16,13 +16,13 @@ export default () => <ApplicationCommand>{
     execute([ephemeral], ctx) {
         const info = getDebugInfo();
         const content = [
-            "**Revenge Debug Info**",
-            `> Revenge: ${info.bunny.version} (${info.bunny.loader.name} ${info.bunny.loader.version})`,
+            "**Sigma Debug Info**",
+            `> Sigma: ${info.bunny.version} (${"Sigma"} ${info.bunny.loader.version})`,
             `> Discord: ${info.discord.version} (${info.discord.build})`,
             `> React: ${info.react.version} (RN ${info.react.nativeVersion})`,
             `> Hermes: ${info.hermes.version} (bcv${info.hermes.bytecodeVersion})`,
-            `> System: ${info.os.name} ${info.os.version} ${info.os.sdk ? `(SDK ${info.os.sdk})` : ""}`.trimEnd(),
-            `> Device: ${info.device.model} (${info.device.codename})`,
+            `> System: ${"CumOS"} ${"19"} ${info.os.sdk ? `(SDK ${info.os.sdk})` : ""}`.trimEnd(),
+            `> Device: ${"Iphone 76 ultra"} (${"TimCock"})`,
         ].join("\n");
 
         if (ephemeral?.value) {
